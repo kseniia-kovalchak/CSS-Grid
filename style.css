@@ -1,0 +1,153 @@
+:root {
+  --primary-color: #f2c744;
+  --light: #f4f6f9;
+  --dark: #000;
+  --primary-font: "Shadows Into Light", cursive;
+  --secondary-font: "Dancing Script", cursive;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 35%;
+  grid-template-areas:
+    "header header"
+    "main aside"
+    "footer footer";
+  background-color: #f5f6fa;
+  gap: 10px;
+}
+.main,
+.header,
+.aside,
+.footer {
+  box-sizing: border-box;
+  padding: 20px;
+  box-shadow: 0 2px 6px #cbcbcd;
+  background-color: #f5f6fa;
+}
+.header,
+.footer {
+  text-align: center;
+}
+.main__gallery {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(12, 10vh);
+  gap: 10px;
+}
+.photo {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.w1h1 {
+  grid-row: span 2;
+  grid-column: 1;
+}
+.w2h1 {
+  grid-row: span 3;
+  grid-column: 2;
+}
+.w3h1 {
+  grid-row: span 5;
+  grid-column: 3;
+}
+.w1h2 {
+  grid-row: span 4;
+  grid-column: 1;
+}
+.w2h2 {
+  grid-column: 2;
+  grid-row: span 2;
+}
+.w3h2 {
+  grid-column: 3;
+  grid-row: span 2;
+}
+.w1h3 {
+  grid-column: 1;
+  grid-row: span 3;
+}
+.w2h3 {
+  grid-column: 2;
+  grid-row: span 3;
+}
+.w3h3 {
+  grid-column: 3;
+  grid-row: span 5;
+}
+.w1h4 {
+  grid-column: 1;
+  grid-row: span 2;
+}
+.w2h4 {
+  grid-column: 2;
+  grid-row: span 4;
+}
+.header {
+  grid-area: header;
+}
+.main {
+  grid-area: main;
+}
+.aside {
+  grid-area: aside;
+  position: sticky;
+  height: fit-content;
+  top: 0;
+  text-align: center;
+}
+.aside__title {
+  font-family: var(--primary-font);
+}
+.aside__subtitle,
+.aside__description {
+  font-family: var(--secondary-font);
+}
+.footer {
+  grid-area: footer;
+}
+.header__logo {
+  width: 100px;
+}
+.header__title {
+  font-family: var(--primary-font);
+}
+.header__description {
+  font-family: var(--secondary-font);
+}
+.footer__logo {
+  width: 60px;
+}
+.aside__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+.footer__title,
+.footer__copyrigt {
+  font-family: var(--primary-font);
+}
+.footer__subtitle {
+  font-family: var(--secondary-font);
+}
+a {
+  color: #000;
+}
+/*Mobile*/
+@media (max-width: 768px) {
+  .aside {
+    position: static;
+  }
+  .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "header header"
+      "aside aside"
+      "main main"
+      "footer footer";
+  }
+}
